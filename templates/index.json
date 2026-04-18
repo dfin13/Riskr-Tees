@@ -207,6 +207,11 @@
         "padding-block-end": 64
       }
     },
+    "riskr_ticker_main": {
+      "type": "riskr-ticker",
+      "name": "Riskr Ticker",
+      "settings": {}
+    },
     "riskr_mission_main": {
       "type": "riskr-mission",
       "name": "Riskr Mission",
@@ -215,6 +220,7 @@
   },
   "order": [
     "riskr_hero_main",
+    "riskr_ticker_main",
     "product_list_fa6P9H",
     "riskr_mission_main"
   ]

@@ -1,0 +1,85 @@
+<div class="riskr-ticker">
+  <div class="riskr-ticker__track" aria-hidden="true">
+    <span class="riskr-ticker__content">
+      MAXIMIZING SHAREHOLDER VALUE &nbsp;&nbsp;&mdash;&nbsp;&nbsp;
+      DRIVING IMPACT AT SCALE &nbsp;&nbsp;&mdash;&nbsp;&nbsp;
+      OPERATIONALIZING THE WARDROBE &nbsp;&nbsp;&mdash;&nbsp;&nbsp;
+      FACILITATING SYNERGY &nbsp;&nbsp;&mdash;&nbsp;&nbsp;
+      MOVING THE NEEDLE &nbsp;&nbsp;&mdash;&nbsp;&nbsp;
+      A HUMAN CAPITAL INITIATIVE &nbsp;&nbsp;&mdash;&nbsp;&nbsp;
+      PREMIUM CORPORATE APPAREL &nbsp;&nbsp;&mdash;&nbsp;&nbsp;
+      LEVERAGING BANDWIDTH AT SCALE &nbsp;&nbsp;&mdash;&nbsp;&nbsp;
+      CROSS-FUNCTIONAL ALIGNMENT &nbsp;&nbsp;&mdash;&nbsp;&nbsp;
+      DISRUPTING THE DISRUPTION &nbsp;&nbsp;&mdash;&nbsp;&nbsp;
+    </span>
+    <span class="riskr-ticker__content">
+      MAXIMIZING SHAREHOLDER VALUE &nbsp;&nbsp;&mdash;&nbsp;&nbsp;
+      DRIVING IMPACT AT SCALE &nbsp;&nbsp;&mdash;&nbsp;&nbsp;
+      OPERATIONALIZING THE WARDROBE &nbsp;&nbsp;&mdash;&nbsp;&nbsp;
+      FACILITATING SYNERGY &nbsp;&nbsp;&mdash;&nbsp;&nbsp;
+      MOVING THE NEEDLE &nbsp;&nbsp;&mdash;&nbsp;&nbsp;
+      A HUMAN CAPITAL INITIATIVE &nbsp;&nbsp;&mdash;&nbsp;&nbsp;
+      PREMIUM CORPORATE APPAREL &nbsp;&nbsp;&mdash;&nbsp;&nbsp;
+      LEVERAGING BANDWIDTH AT SCALE &nbsp;&nbsp;&mdash;&nbsp;&nbsp;
+      CROSS-FUNCTIONAL ALIGNMENT &nbsp;&nbsp;&mdash;&nbsp;&nbsp;
+      DISRUPTING THE DISRUPTION &nbsp;&nbsp;&mdash;&nbsp;&nbsp;
+    </span>
+  </div>
+</div>
+
+<style>
+  .riskr-ticker {
+    background: #000;
+    overflow: hidden;
+    padding-block: 14px;
+    border-top: 1px solid #111;
+    border-bottom: 1px solid #111;
+  }
+
+  .riskr-ticker__track {
+    display: flex;
+    width: max-content;
+    will-change: transform;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    @keyframes riskr-ticker-scroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    .riskr-ticker__track {
+      animation: riskr-ticker-scroll 40s linear infinite;
+    }
+
+    .riskr-ticker:hover .riskr-ticker__track {
+      animation-play-state: paused;
+    }
+  }
+
+  .riskr-ticker__content {
+    display: block;
+    white-space: nowrap;
+    font-family: var(--font-body--family);
+    font-size: 0.625rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    color: rgba(255, 255, 255, 0.45);
+    padding-right: 0;
+    line-height: 1;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Riskr Ticker",
+  "tag": "section",
+  "class": "riskr-ticker-section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Riskr Ticker"
+    }
+  ]
+}
+{% endschema %}
