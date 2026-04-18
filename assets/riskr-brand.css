@@ -164,6 +164,49 @@ select {
   border-radius: 0 !important;
 }
 
+/* ── Focus visible: keyboard navigation indicators ────────────── */
+
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+.riskr-hero__cta:focus-visible,
+.riskr-mission__link:focus-visible,
+.riskr-featured__cta:focus-visible,
+.riskr-about__cta-btn:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+
+.riskr-hero__cta--primary:focus-visible,
+.riskr-about__cta-btn:focus-visible {
+  outline-color: rgba(255, 255, 255, 0.8);
+}
+
+.riskr-mission__link:focus-visible,
+.riskr-investors__link:focus-visible,
+.riskr-press__contact-link:focus-visible,
+.riskr-careers__job-apply:focus-visible {
+  outline: 2px solid #000;
+  outline-offset: 4px;
+}
+
+.riskr-featured__btn:focus-visible,
+.riskr-featured__dot:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.7);
+  outline-offset: 3px;
+}
+
+/* ── Dark sections: browser UI color-scheme hint ──────────────── */
+
+.riskr-hero-section,
+.riskr-ticker-section,
+.riskr-featured-section,
+.riskr-why-section {
+  color-scheme: dark;
+}
+
 /* ── Scroll reveal ────────────────────────────────────────────── */
 
 .riskr-reveal {

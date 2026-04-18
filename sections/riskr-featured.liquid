@@ -32,7 +32,7 @@
       <div class="riskr-featured__progress-bar"></div>
     </div>
 
-    <div class="riskr-featured__slides">
+    <div class="riskr-featured__slides" aria-live="polite" aria-atomic="true">
       {%- for product in featured_products -%}
         <div class="riskr-featured__slide{% if forloop.first %} is-active{% endif %}"
              data-index="{{ forloop.index0 }}">

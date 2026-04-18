@@ -125,7 +125,7 @@
     font-family: var(--font-heading--family);
     font-size: clamp(36px, 6vw, 80px);
     font-weight: 700;
-    line-height: 0.95;
+    line-height: 1.0;
     letter-spacing: -0.04em;
     color: #000;
     margin: 0;
@@ -303,7 +303,7 @@
     border-radius: 0;
     white-space: nowrap;
     flex-shrink: 0;
-    transition: background 0.12s ease, color 0.12s ease;
+    transition: background 0.15s ease, color 0.15s ease;
   }
 
   .riskr-about__cta-btn:hover {
@@ -331,6 +331,10 @@
   @media screen and (max-width: 749px) {
     .riskr-about__hero {
       padding-block: 72px 56px;
+    }
+
+    .riskr-about__body {
+      padding-block-end: 56px;
     }
 
     .riskr-about__stats {
