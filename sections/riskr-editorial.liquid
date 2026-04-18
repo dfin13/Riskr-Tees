@@ -1,0 +1,82 @@
+<div class="riskr-editorial">
+  <div class="riskr-editorial__inner page-width">
+    <div class="riskr-editorial__quote-mark">&ldquo;</div>
+    <blockquote class="riskr-editorial__statement">
+      The boardroom doesn't care what you believe.<br>
+      It cares what you're wearing when you say it.
+    </blockquote>
+    <p class="riskr-editorial__attribution">— Riskr Inc. Annual Report, FY2025 (Draft)</p>
+  </div>
+</div>
+
+<style>
+  .riskr-editorial {
+    background: #000;
+    padding-block: 120px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .riskr-editorial__inner {
+    position: relative;
+    z-index: 1;
+  }
+
+  .riskr-editorial__quote-mark {
+    font-family: var(--font-heading--family);
+    font-size: clamp(80px, 12vw, 160px);
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.06);
+    line-height: 0.7;
+    margin-bottom: 16px;
+    letter-spacing: -0.04em;
+    user-select: none;
+  }
+
+  .riskr-editorial__statement {
+    font-family: var(--font-heading--family);
+    font-size: clamp(28px, 4.5vw, 64px);
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    color: #fff;
+    margin: 0 0 32px;
+    max-width: 900px;
+    border: none;
+    padding: 0;
+  }
+
+  .riskr-editorial__attribution {
+    font-family: var(--font-body--family);
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.3);
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  @media screen and (max-width: 749px) {
+    .riskr-editorial {
+      padding-block: 80px;
+    }
+
+    .riskr-editorial__statement {
+      margin-bottom: 24px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Riskr Editorial",
+  "tag": "section",
+  "class": "riskr-editorial-section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Riskr Editorial"
+    }
+  ]
+}
+{% endschema %}

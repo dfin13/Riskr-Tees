@@ -217,6 +217,11 @@
       "name": "Riskr Mission",
       "settings": {}
     },
+    "riskr_editorial_main": {
+      "type": "riskr-editorial",
+      "name": "Riskr Editorial",
+      "settings": {}
+    },
     "riskr_why_main": {
       "type": "riskr-why",
       "name": "Riskr Why",
@@ -242,6 +247,7 @@
     "product_list_fa6P9H",
     "riskr_featured_main",
     "riskr_mission_main",
+    "riskr_editorial_main",
     "riskr_why_main",
     "riskr_testimonials_main"
   ]
