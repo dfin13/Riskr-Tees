@@ -14,6 +14,7 @@
     '.riskr-why__item',
     '.riskr-testimonials__card',
     '.riskr-testimonials__header',
+    '.riskr-contact__layout',
   ].join(',');
 
   const observer = new IntersectionObserver(

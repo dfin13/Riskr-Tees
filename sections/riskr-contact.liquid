@@ -1,0 +1,387 @@
+<div class="riskr-contact">
+
+  <div class="riskr-contact__hero page-width">
+    <p class="riskr-contact__eyebrow">Contact</p>
+    <h1 class="riskr-contact__headline">
+      Let's connect.<br>
+      We have bandwidth.
+    </h1>
+    <p class="riskr-contact__subhead">
+      For general inquiries, wholesale opportunities, or questions about operationalizing your wardrobe — reach out below.
+    </p>
+  </div>
+
+  <div class="riskr-contact__divider"></div>
+
+  <div class="riskr-contact__body page-width">
+
+    <div class="riskr-contact__layout">
+
+      <div class="riskr-contact__label-col">
+        <span class="riskr-contact__label">Send a Message</span>
+      </div>
+
+      <div class="riskr-contact__form-col">
+        {% form 'contact' %}
+          {%- if form.posted_successfully? -%}
+            <div class="riskr-contact__success">
+              <p>Your message has been received. We will respond within 3–5 business days, pending synergy availability.</p>
+            </div>
+          {%- else -%}
+
+            {%- if form.errors -%}
+              <div class="riskr-contact__errors">
+                {{ form.errors | default_errors }}
+              </div>
+            {%- endif -%}
+
+            <div class="riskr-contact__field">
+              <label class="riskr-contact__field-label" for="ContactName">Name</label>
+              <input
+                class="riskr-contact__input"
+                type="text"
+                id="ContactName"
+                name="contact[name]"
+                value="{% if form.name %}{{ form.name }}{% endif %}"
+                autocomplete="name"
+                placeholder="Your full name"
+              >
+            </div>
+
+            <div class="riskr-contact__field">
+              <label class="riskr-contact__field-label" for="ContactEmail">Email <span class="riskr-contact__required" aria-hidden="true">*</span></label>
+              <input
+                class="riskr-contact__input"
+                type="email"
+                id="ContactEmail"
+                name="contact[email]"
+                value="{% if form.email %}{{ form.email }}{% endif %}"
+                autocomplete="email"
+                required
+                placeholder="you@company.com"
+              >
+            </div>
+
+            <div class="riskr-contact__field">
+              <label class="riskr-contact__field-label" for="ContactPhone">Phone <span class="riskr-contact__optional">(optional)</span></label>
+              <input
+                class="riskr-contact__input"
+                type="tel"
+                id="ContactPhone"
+                name="contact[phone]"
+                value="{% if form.phone %}{{ form.phone }}{% endif %}"
+                autocomplete="tel"
+                placeholder="+1 (555) 000-0000"
+              >
+            </div>
+
+            <div class="riskr-contact__field">
+              <label class="riskr-contact__field-label" for="ContactMessage">Message <span class="riskr-contact__required" aria-hidden="true">*</span></label>
+              <textarea
+                class="riskr-contact__input riskr-contact__textarea"
+                id="ContactMessage"
+                name="contact[body]"
+                required
+                placeholder="Describe your inquiry, initiative, or needle-moving objective."
+                rows="5"
+              >{% if form.body %}{{ form.body }}{% endif %}</textarea>
+            </div>
+
+            <button type="submit" class="riskr-contact__submit">
+              Send Message
+            </button>
+
+          {%- endif -%}
+        {% endform %}
+      </div>
+
+      <div class="riskr-contact__info-col">
+        <div class="riskr-contact__info-block">
+          <span class="riskr-contact__info-label">General</span>
+          <a href="mailto:hello@riskr.inc" class="riskr-contact__info-link">hello@riskr.inc</a>
+        </div>
+        <div class="riskr-contact__info-block">
+          <span class="riskr-contact__info-label">Press</span>
+          <a href="mailto:press@riskr.inc" class="riskr-contact__info-link">press@riskr.inc</a>
+        </div>
+        <div class="riskr-contact__info-block">
+          <span class="riskr-contact__info-label">Investor Relations</span>
+          <a href="mailto:ir@riskr.inc" class="riskr-contact__info-link">ir@riskr.inc</a>
+        </div>
+        <div class="riskr-contact__info-block">
+          <span class="riskr-contact__info-label">Careers</span>
+          <a href="mailto:careers@riskr.inc" class="riskr-contact__info-link">careers@riskr.inc</a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<style>
+  .riskr-contact {
+    background: #fff;
+  }
+
+  .riskr-contact__hero {
+    padding-block: 100px 80px;
+  }
+
+  .riskr-contact__eyebrow {
+    font-family: var(--font-body--family);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.38);
+    margin: 0 0 28px;
+  }
+
+  .riskr-contact__headline {
+    font-family: var(--font-heading--family);
+    font-size: clamp(36px, 6vw, 80px);
+    font-weight: 700;
+    line-height: 1.0;
+    letter-spacing: -0.04em;
+    color: #000;
+    margin: 0 0 28px;
+  }
+
+  .riskr-contact__subhead {
+    font-family: var(--font-body--family);
+    font-size: 0.9375rem;
+    font-weight: 400;
+    line-height: 1.65;
+    color: rgba(0, 0, 0, 0.52);
+    max-width: 480px;
+    margin: 0;
+  }
+
+  .riskr-contact__divider {
+    border-top: 1px solid #e8e8e8;
+  }
+
+  .riskr-contact__body {
+    padding-block: 72px 100px;
+  }
+
+  .riskr-contact__layout {
+    display: grid;
+    grid-template-columns: 200px 1fr 220px;
+    gap: 0 80px;
+    align-items: start;
+  }
+
+  .riskr-contact__label-col {
+    padding-top: 4px;
+  }
+
+  .riskr-contact__label {
+    display: block;
+    font-family: var(--font-body--family);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.38);
+  }
+
+  /* ── Form ───────────────────────────────────────────────────── */
+
+  .riskr-contact__form-col {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .riskr-contact__success {
+    padding: 24px;
+    border: 1px solid #e8e8e8;
+    background: #f7f7f7;
+  }
+
+  .riskr-contact__success p {
+    font-family: var(--font-body--family);
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: rgba(0, 0, 0, 0.65);
+    margin: 0;
+  }
+
+  .riskr-contact__errors {
+    font-family: var(--font-body--family);
+    font-size: 0.875rem;
+    color: #c00;
+  }
+
+  .riskr-contact__field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .riskr-contact__field-label {
+    font-family: var(--font-body--family);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.5);
+  }
+
+  .riskr-contact__required {
+    color: rgba(0, 0, 0, 0.38);
+  }
+
+  .riskr-contact__optional {
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+    color: rgba(0, 0, 0, 0.32);
+    font-size: 0.6875rem;
+  }
+
+  .riskr-contact__input {
+    font-family: var(--font-body--family);
+    font-size: 0.9375rem;
+    font-weight: 400;
+    color: #000;
+    background: #fff;
+    border: 1px solid #d8d8d8;
+    border-radius: 0;
+    padding: 14px 16px;
+    width: 100%;
+    outline: none;
+    transition: border-color 0.15s ease;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+
+  .riskr-contact__input:focus {
+    border-color: #000;
+  }
+
+  .riskr-contact__textarea {
+    resize: vertical;
+    min-height: 140px;
+  }
+
+  .riskr-contact__submit {
+    display: inline-block;
+    font-family: var(--font-body--family);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 15px 32px;
+    background: #000;
+    color: #fff;
+    border: 1px solid #000;
+    border-radius: 0;
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease;
+    align-self: flex-start;
+  }
+
+  .riskr-contact__submit:hover {
+    background: #222;
+    border-color: #222;
+  }
+
+  /* ── Info sidebar ───────────────────────────────────────────── */
+
+  .riskr-contact__info-col {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding-top: 4px;
+  }
+
+  .riskr-contact__info-block {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .riskr-contact__info-label {
+    font-family: var(--font-body--family);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.38);
+  }
+
+  .riskr-contact__info-link {
+    font-family: var(--font-body--family);
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: #000;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 2px;
+    transition: border-color 0.15s ease;
+    align-self: flex-start;
+  }
+
+  .riskr-contact__info-link:hover {
+    border-color: #000;
+  }
+
+  /* ── Tablet ─────────────────────────────────────────────────── */
+
+  @media screen and (max-width: 989px) {
+    .riskr-contact__layout {
+      grid-template-columns: 1fr;
+      gap: 56px;
+    }
+
+    .riskr-contact__label-col {
+      padding-top: 0;
+    }
+
+    .riskr-contact__info-col {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 32px 48px;
+    }
+  }
+
+  /* ── Mobile ─────────────────────────────────────────────────── */
+
+  @media screen and (max-width: 749px) {
+    .riskr-contact__hero {
+      padding-block: 72px 56px;
+    }
+
+    .riskr-contact__body {
+      padding-block: 56px 72px;
+    }
+
+    .riskr-contact__submit {
+      width: 100%;
+      text-align: center;
+    }
+
+    .riskr-contact__info-col {
+      flex-direction: column;
+      gap: 28px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Riskr Contact",
+  "tag": "section",
+  "class": "riskr-contact-section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Riskr Contact"
+    }
+  ]
+}
+{% endschema %}
