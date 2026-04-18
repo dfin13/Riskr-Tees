@@ -1,11 +1,26 @@
-<div class="riskr-hero">
+<div class="riskr-hero" id="riskr-hero">
   <div class="riskr-hero__inner page-width">
-    <p class="riskr-hero__eyebrow">Est. {{ 'now' | date: '%Y' }} &mdash; A Riskr Inc. Company</p>
-    <h1 class="riskr-hero__wordmark">RISKR</h1>
-    <p class="riskr-hero__tagline">Apparel for the Advancement of the Modern Professional.</p>
-    <a href="{{ routes.collections_url }}/all" class="riskr-hero__cta">
-      Shop Collection &rarr;
-    </a>
+
+    <div class="riskr-hero__content">
+      <p class="riskr-hero__eyebrow">Riskr&trade; &mdash; A Human Capital Initiative</p>
+
+      <h1 class="riskr-hero__wordmark">RISKR</h1>
+
+      <p class="riskr-hero__tagline">
+        Apparel engineered to signal ambition,<br>
+        communicate alignment, and facilitate synergy.
+      </p>
+
+      <div class="riskr-hero__actions">
+        <a href="{{ routes.collections_url }}/all" class="riskr-hero__cta riskr-hero__cta--primary">
+          Shop the Collection
+        </a>
+        <a href="#riskr-mission" class="riskr-hero__cta riskr-hero__cta--secondary">
+          Our Mission &darr;
+        </a>
+      </div>
+    </div>
+
   </div>
 </div>
 
@@ -13,76 +28,127 @@
   .riskr-hero {
     background: #000;
     width: 100%;
-    min-height: 82vh;
+    min-height: 100svh;
     display: flex;
     align-items: flex-end;
-    padding-bottom: 72px;
+    position: relative;
+    overflow: hidden;
   }
 
   .riskr-hero__inner {
+    padding-block: 0 56px;
+    width: 100%;
+  }
+
+  .riskr-hero__content {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 0;
+    max-width: 900px;
   }
 
   .riskr-hero__eyebrow {
-    color: #ffffff80;
+    color: rgba(255, 255, 255, 0.38);
     font-family: var(--font-body--family);
-    font-size: 0.75rem;
-    letter-spacing: 0.12em;
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    margin: 0 0 20px;
-    font-weight: 400;
+    margin: 0 0 24px;
   }
 
   .riskr-hero__wordmark {
     color: #fff;
     font-family: var(--font-heading--family);
-    font-size: clamp(72px, 12vw, 160px);
+    font-size: clamp(88px, 14vw, 192px);
     font-weight: 700;
-    line-height: 0.9;
-    letter-spacing: -0.03em;
-    margin: 0 0 28px;
+    line-height: 0.86;
+    letter-spacing: -0.04em;
+    margin: 0 0 40px;
     text-transform: uppercase;
   }
 
   .riskr-hero__tagline {
-    color: #ffffff99;
+    color: rgba(255, 255, 255, 0.52);
     font-family: var(--font-body--family);
-    font-size: clamp(14px, 1.4vw, 18px);
+    font-size: clamp(14px, 1.5vw, 18px);
     font-weight: 400;
-    line-height: 1.5;
-    margin: 0 0 40px;
-    max-width: 420px;
+    line-height: 1.6;
+    margin: 0 0 48px;
+    max-width: 440px;
+  }
+
+  .riskr-hero__actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
   }
 
   .riskr-hero__cta {
     display: inline-block;
-    background: #fff;
-    color: #000;
     font-family: var(--font-body--family);
-    font-size: 0.875rem;
+    font-size: 0.8125rem;
     font-weight: 600;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.05em;
     text-decoration: none;
-    padding: 14px 28px;
-    border-radius: 2px;
-    transition: background 0.15s ease, color 0.15s ease;
+    padding: 13px 26px;
+    border-radius: 0;
+    transition: background 0.12s ease, color 0.12s ease, border-color 0.12s ease;
+    white-space: nowrap;
   }
 
-  .riskr-hero__cta:hover {
-    background: #e0e0e0;
+  .riskr-hero__cta--primary {
+    background: #fff;
+    color: #000;
+    border: 1px solid #fff;
+  }
+
+  .riskr-hero__cta--primary:hover {
+    background: #d8d8d8;
+    border-color: #d8d8d8;
+  }
+
+  .riskr-hero__cta--secondary {
+    background: transparent;
+    color: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+  }
+
+  .riskr-hero__cta--secondary:hover {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.5);
   }
 
   @media screen and (max-width: 749px) {
     .riskr-hero {
-      min-height: 70vh;
-      padding-bottom: 48px;
+      min-height: 100svh;
+      align-items: flex-end;
+    }
+
+    .riskr-hero__inner {
+      padding-block: 0 40px;
+    }
+
+    .riskr-hero__wordmark {
+      margin-bottom: 28px;
     }
 
     .riskr-hero__tagline {
       max-width: 100%;
+      margin-bottom: 36px;
+    }
+
+    .riskr-hero__actions {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .riskr-hero__cta {
+      width: 100%;
+      text-align: center;
     }
   }
 </style>

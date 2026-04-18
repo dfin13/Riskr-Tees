@@ -1,70 +1,122 @@
-<div class="riskr-mission">
+<div class="riskr-mission" id="riskr-mission">
   <div class="riskr-mission__inner page-width">
-    <div class="riskr-mission__label">Our Mission</div>
-    <div class="riskr-mission__body">
-      <h2 class="riskr-mission__headline">Driving Impact at Scale.<br>One Shirt at a Time.</h2>
-      <div class="riskr-mission__copy">
-        <p>At Riskr, we believe that meaningful disruption begins with what you wear to the all-hands meeting.</p>
-        <p>Our garments are engineered to communicate alignment, signal bandwidth, and facilitate the kind of low-friction stakeholder engagement that moves the needle on cross-functional deliverables.</p>
-        <p>This is not a clothing company. This is a human capital optimization platform that happens to sell shirts.</p>
-      </div>
+
+    <div class="riskr-mission__col-label">
+      <span class="riskr-mission__label">Our Mission</span>
     </div>
+
+    <div class="riskr-mission__col-body">
+      <h2 class="riskr-mission__headline">
+        Driving Impact at Scale.<br>
+        One Shirt at a Time.
+      </h2>
+
+      <div class="riskr-mission__copy">
+        <p>
+          At Riskr, we believe meaningful disruption begins with what you wear to the all-hands.
+        </p>
+        <p>
+          Our garments are engineered to communicate alignment, signal bandwidth, and facilitate the kind of low-friction stakeholder engagement that moves the needle on cross-functional deliverables.
+        </p>
+        <p>
+          This is not a clothing company.<br>
+          This is a human capital optimization platform that happens to sell shirts.
+        </p>
+      </div>
+
+      <a href="{{ routes.collections_url }}/all" class="riskr-mission__link">
+        View all products &rarr;
+      </a>
+    </div>
+
   </div>
 </div>
 
 <style>
   .riskr-mission {
-    background: #f5f5f5;
-    padding: 100px 0;
+    background: #fff;
+    padding-block: 112px;
+    border-top: 1px solid #e8e8e8;
   }
 
   .riskr-mission__inner {
     display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: 48px;
+    grid-template-columns: 180px 1fr;
+    gap: 0 80px;
     align-items: start;
   }
 
+  .riskr-mission__col-label {
+    padding-top: 10px;
+  }
+
   .riskr-mission__label {
+    display: block;
     font-family: var(--font-body--family);
-    font-size: 0.75rem;
+    font-size: 0.6875rem;
+    font-weight: 500;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: #00000060;
-    padding-top: 8px;
+    color: rgba(0, 0, 0, 0.38);
   }
 
   .riskr-mission__headline {
     font-family: var(--font-heading--family);
-    font-size: clamp(28px, 4vw, 48px);
+    font-size: clamp(28px, 4.5vw, 56px);
     font-weight: 700;
-    line-height: 1.05;
-    letter-spacing: -0.02em;
+    line-height: 1.02;
+    letter-spacing: -0.025em;
     color: #000;
-    margin: 0 0 32px;
+    margin: 0 0 40px;
+  }
+
+  .riskr-mission__copy {
+    margin-bottom: 40px;
   }
 
   .riskr-mission__copy p {
     font-family: var(--font-body--family);
     font-size: 0.9375rem;
+    font-weight: 400;
     line-height: 1.7;
-    color: #00000099;
-    margin: 0 0 16px;
-    max-width: 520px;
+    color: rgba(0, 0, 0, 0.6);
+    margin: 0 0 20px;
+    max-width: 560px;
   }
 
   .riskr-mission__copy p:last-child {
     margin-bottom: 0;
   }
 
+  .riskr-mission__link {
+    display: inline-block;
+    font-family: var(--font-body--family);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #000;
+    text-decoration: none;
+    letter-spacing: 0.01em;
+    border-bottom: 1px solid #000;
+    padding-bottom: 2px;
+    transition: opacity 0.12s ease;
+  }
+
+  .riskr-mission__link:hover {
+    opacity: 0.5;
+  }
+
   @media screen and (max-width: 749px) {
     .riskr-mission {
-      padding: 64px 0;
+      padding-block: 72px;
     }
 
     .riskr-mission__inner {
       grid-template-columns: 1fr;
-      gap: 24px;
+      gap: 28px;
+    }
+
+    .riskr-mission__col-label {
+      padding-top: 0;
     }
   }
 </style>
