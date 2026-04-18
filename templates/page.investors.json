@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "riskr_investors_main": {
+      "type": "riskr-investors",
+      "settings": {}
+    }
+  },
+  "order": [
+    "riskr_investors_main"
+  ]
+}

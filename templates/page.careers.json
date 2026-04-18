@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "riskr_careers_main": {
+      "type": "riskr-careers",
+      "settings": {}
+    }
+  },
+  "order": [
+    "riskr_careers_main"
+  ]
+}
