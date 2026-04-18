@@ -11,6 +11,9 @@
     '.riskr-careers__culture',
     '.riskr-careers__benefits',
     '.riskr-mission__inner',
+    '.riskr-why__item',
+    '.riskr-testimonials__card',
+    '.riskr-testimonials__header',
   ].join(',');
 
   const observer = new IntersectionObserver(

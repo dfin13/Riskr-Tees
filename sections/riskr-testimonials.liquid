@@ -1,0 +1,193 @@
+<div class="riskr-testimonials">
+  <div class="riskr-testimonials__inner page-width">
+
+    <div class="riskr-testimonials__header">
+      <span class="riskr-testimonials__label">Social Proof</span>
+      <h2 class="riskr-testimonials__headline">
+        Trusted by professionals<br>who take themselves seriously.
+      </h2>
+    </div>
+
+    <div class="riskr-testimonials__grid">
+
+      <div class="riskr-testimonials__card">
+        <p class="riskr-testimonials__quote">"I wore this shirt to our Q3 all-hands. Three people asked where I got it. I said I couldn't disclose that at this time."</p>
+        <div class="riskr-testimonials__author">
+          <span class="riskr-testimonials__name">T. Morrison</span>
+          <span class="riskr-testimonials__role">Chief People Officer, Series B Startup</span>
+        </div>
+      </div>
+
+      <div class="riskr-testimonials__card">
+        <p class="riskr-testimonials__quote">"This garment has done more for my personal brand than 18 months of LinkedIn content. I've been promoted twice since wearing it. Correlation is not causation. But."</p>
+        <div class="riskr-testimonials__author">
+          <span class="riskr-testimonials__name">D. Harrington</span>
+          <span class="riskr-testimonials__role">VP of Strategic Everything, Fortune 500</span>
+        </div>
+      </div>
+
+      <div class="riskr-testimonials__card">
+        <p class="riskr-testimonials__quote">"I ordered one for myself and four for my direct reports. Team alignment has never been higher. Our NPS is up 12 points. I'm not saying it's the shirts."</p>
+        <div class="riskr-testimonials__author">
+          <span class="riskr-testimonials__name">R. Patel</span>
+          <span class="riskr-testimonials__role">Director of Alignment, Management Consulting</span>
+        </div>
+      </div>
+
+      <div class="riskr-testimonials__card">
+        <p class="riskr-testimonials__quote">"Honestly, I don't even work in an office. I work from home. But I wear this shirt on Zoom calls and people respond to me differently. There's a before and an after."</p>
+        <div class="riskr-testimonials__author">
+          <span class="riskr-testimonials__name">K. Osei</span>
+          <span class="riskr-testimonials__role">Head of Remote Synergy, Fully Distributed</span>
+        </div>
+      </div>
+
+      <div class="riskr-testimonials__card">
+        <p class="riskr-testimonials__quote">"I gave one to my manager as a gift. She now reports to me. I am not legally allowed to say more."</p>
+        <div class="riskr-testimonials__author">
+          <span class="riskr-testimonials__name">J. Blackwell</span>
+          <span class="riskr-testimonials__role">Newly Promoted, Mid-Market SaaS</span>
+        </div>
+      </div>
+
+      <div class="riskr-testimonials__card">
+        <p class="riskr-testimonials__quote">"Five stars. Comfortable. Well-made. The text on the front accurately describes my professional aspirations. Washed well. Would operationalize again."</p>
+        <div class="riskr-testimonials__author">
+          <span class="riskr-testimonials__name">A. Chen</span>
+          <span class="riskr-testimonials__role">Senior Individual Contributor</span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<style>
+  .riskr-testimonials {
+    background: #f7f7f7;
+    padding-block: 96px;
+    border-top: 1px solid #e8e8e8;
+  }
+
+  .riskr-testimonials__header {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 0 80px;
+    align-items: start;
+    margin-bottom: 64px;
+  }
+
+  .riskr-testimonials__label {
+    display: block;
+    font-family: var(--font-body--family);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.38);
+    padding-top: 10px;
+  }
+
+  .riskr-testimonials__headline {
+    font-family: var(--font-heading--family);
+    font-size: clamp(24px, 3.5vw, 44px);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: #000;
+    margin: 0;
+  }
+
+  .riskr-testimonials__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+  }
+
+  .riskr-testimonials__card {
+    padding: 40px;
+    border: 1px solid #e8e8e8;
+    margin: -1px 0 0 -1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 28px;
+    background: #fff;
+    transition: background 0.2s ease;
+  }
+
+  .riskr-testimonials__card:hover {
+    background: #fafafa;
+  }
+
+  .riskr-testimonials__quote {
+    font-family: var(--font-body--family);
+    font-size: 0.9375rem;
+    font-weight: 400;
+    line-height: 1.65;
+    color: rgba(0, 0, 0, 0.72);
+    margin: 0;
+  }
+
+  .riskr-testimonials__author {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .riskr-testimonials__name {
+    font-family: var(--font-body--family);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #000;
+    letter-spacing: -0.01em;
+  }
+
+  .riskr-testimonials__role {
+    font-family: var(--font-body--family);
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.42);
+    letter-spacing: 0.02em;
+  }
+
+  @media screen and (max-width: 989px) {
+    .riskr-testimonials__header {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .riskr-testimonials__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .riskr-testimonials {
+      padding-block: 72px;
+    }
+
+    .riskr-testimonials__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .riskr-testimonials__card {
+      padding: 28px 24px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Riskr Testimonials",
+  "tag": "section",
+  "class": "riskr-testimonials-section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Riskr Testimonials"
+    }
+  ]
+}
+{% endschema %}

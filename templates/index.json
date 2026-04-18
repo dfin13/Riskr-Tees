@@ -216,12 +216,24 @@
       "type": "riskr-mission",
       "name": "Riskr Mission",
       "settings": {}
+    },
+    "riskr_why_main": {
+      "type": "riskr-why",
+      "name": "Riskr Why",
+      "settings": {}
+    },
+    "riskr_testimonials_main": {
+      "type": "riskr-testimonials",
+      "name": "Riskr Testimonials",
+      "settings": {}
     }
   },
   "order": [
     "riskr_hero_main",
     "riskr_ticker_main",
     "product_list_fa6P9H",
-    "riskr_mission_main"
+    "riskr_mission_main",
+    "riskr_why_main",
+    "riskr_testimonials_main"
   ]
 }

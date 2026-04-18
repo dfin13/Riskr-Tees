@@ -1,0 +1,125 @@
+<div class="riskr-why">
+  <div class="riskr-why__inner page-width">
+
+    <div class="riskr-why__header">
+      <span class="riskr-why__label">Why Riskr</span>
+    </div>
+
+    <div class="riskr-why__grid">
+
+      <div class="riskr-why__item">
+        <span class="riskr-why__number">01</span>
+        <h3 class="riskr-why__title">Premium Materials</h3>
+        <p class="riskr-why__body">Our garments are constructed from 100% ring-spun cotton, sourced through a supply chain that has been reviewed by at least one person with an opinion about fabric. Comfortable enough to wear to the all-hands. Professional enough to wear to the board meeting that follows.</p>
+      </div>
+
+      <div class="riskr-why__item">
+        <span class="riskr-why__number">02</span>
+        <h3 class="riskr-why__title">Precision Messaging</h3>
+        <p class="riskr-why__body">Every phrase on every garment has been carefully selected to communicate maximum strategic ambiguity. Our copy is designed to resonate with stakeholders across all levels of the org chart while remaining technically accurate, legally defensible, and deeply meaningless.</p>
+      </div>
+
+      <div class="riskr-why__item">
+        <span class="riskr-why__number">03</span>
+        <h3 class="riskr-why__title">Impact at Scale</h3>
+        <p class="riskr-why__body">Wearing Riskr signals to your peers, your leadership, and your LinkedIn connections that you are a person who has internalized the language of modern business culture. This is either very powerful or very funny. In our experience, it is both.</p>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<style>
+  .riskr-why {
+    background: #000;
+    padding-block: 96px;
+  }
+
+  .riskr-why__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+  }
+
+  .riskr-why__header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 24px;
+  }
+
+  .riskr-why__label {
+    display: block;
+    font-family: var(--font-body--family);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.35);
+  }
+
+  .riskr-why__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0 64px;
+  }
+
+  .riskr-why__item {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .riskr-why__number {
+    font-family: var(--font-body--family);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.25);
+  }
+
+  .riskr-why__title {
+    font-family: var(--font-heading--family);
+    font-size: clamp(18px, 2vw, 24px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #fff;
+    margin: 0;
+    line-height: 1.1;
+  }
+
+  .riskr-why__body {
+    font-family: var(--font-body--family);
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0;
+  }
+
+  @media screen and (max-width: 749px) {
+    .riskr-why {
+      padding-block: 72px;
+    }
+
+    .riskr-why__grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Riskr Why",
+  "tag": "section",
+  "class": "riskr-why-section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Riskr Why"
+    }
+  ]
+}
+{% endschema %}
