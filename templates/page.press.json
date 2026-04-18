@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "riskr_press_main": {
+      "type": "riskr-press",
+      "settings": {}
+    }
+  },
+  "order": [
+    "riskr_press_main"
+  ]
+}

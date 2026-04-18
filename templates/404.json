@@ -15,7 +15,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<h1>Page not found</h1>",
+            "text": "<h2>This page has been restructured.</h2>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -41,7 +41,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<p>The link may be incorrect, or the page has been removed. </p>",
+            "text": "<p>The URL you requested is no longer within our operational scope. This page has undergone an organizational realignment and cannot be located at this time. We apologize for any disruption to your synergy.</p>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -67,7 +67,7 @@
           "type": "button",
           "name": "t:names.button",
           "settings": {
-            "label": "Continue shopping",
+            "label": "Return to Core Business",
             "link": "shopify://collections/all",
             "open_in_new_tab": false,
             "style_class": "button",

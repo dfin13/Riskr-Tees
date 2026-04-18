@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "riskr_about_main": {
+      "type": "riskr-about",
+      "settings": {}
+    }
+  },
+  "order": [
+    "riskr_about_main"
+  ]
+}

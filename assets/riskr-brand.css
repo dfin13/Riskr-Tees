@@ -108,10 +108,27 @@ select {
   border-radius: 0 !important;
 }
 
-/* ── Cart drawer: minimal ─────────────────────────────────────── */
+/* ── Sticky header: smooth entrance ──────────────────────────── */
+
+#header-component[sticky] {
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ── Cart drawer: smooth slide + minimal ─────────────────────── */
 
 .cart-drawer {
   border-radius: 0 !important;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* ── Product card: hover dim ──────────────────────────────────── */
+
+.product-card .card-gallery {
+  transition: opacity 0.2s ease;
+}
+
+.product-card:hover .card-gallery {
+  opacity: 0.88;
 }
 
 /* ── Collection page header ───────────────────────────────────── */

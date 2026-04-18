@@ -64,7 +64,7 @@
     font-size: clamp(88px, 14vw, 192px);
     font-weight: 700;
     line-height: 0.86;
-    letter-spacing: -0.04em;
+    letter-spacing: -0.05em;
     margin: 0 0 40px;
     text-transform: uppercase;
   }
@@ -119,6 +119,30 @@
   .riskr-hero__cta--secondary:hover {
     color: #fff;
     border-color: rgba(255, 255, 255, 0.5);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    @keyframes riskr-fade-up {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .riskr-hero__eyebrow {
+      opacity: 0;
+      animation: riskr-fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
+    }
+    .riskr-hero__wordmark {
+      opacity: 0;
+      animation: riskr-fade-up 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.26s forwards;
+    }
+    .riskr-hero__tagline {
+      opacity: 0;
+      animation: riskr-fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.44s forwards;
+    }
+    .riskr-hero__actions {
+      opacity: 0;
+      animation: riskr-fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.58s forwards;
+    }
   }
 
   @media screen and (max-width: 749px) {
