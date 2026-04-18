@@ -1,0 +1,102 @@
+<div class="riskr-hero">
+  <div class="riskr-hero__inner page-width">
+    <p class="riskr-hero__eyebrow">Est. {{ 'now' | date: '%Y' }} &mdash; A Riskr Inc. Company</p>
+    <h1 class="riskr-hero__wordmark">RISKR</h1>
+    <p class="riskr-hero__tagline">Apparel for the Advancement of the Modern Professional.</p>
+    <a href="{{ routes.collections_url }}/all" class="riskr-hero__cta">
+      Shop Collection &rarr;
+    </a>
+  </div>
+</div>
+
+<style>
+  .riskr-hero {
+    background: #000;
+    width: 100%;
+    min-height: 82vh;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 72px;
+  }
+
+  .riskr-hero__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  .riskr-hero__eyebrow {
+    color: #ffffff80;
+    font-family: var(--font-body--family);
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin: 0 0 20px;
+    font-weight: 400;
+  }
+
+  .riskr-hero__wordmark {
+    color: #fff;
+    font-family: var(--font-heading--family);
+    font-size: clamp(72px, 12vw, 160px);
+    font-weight: 700;
+    line-height: 0.9;
+    letter-spacing: -0.03em;
+    margin: 0 0 28px;
+    text-transform: uppercase;
+  }
+
+  .riskr-hero__tagline {
+    color: #ffffff99;
+    font-family: var(--font-body--family);
+    font-size: clamp(14px, 1.4vw, 18px);
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 0 0 40px;
+    max-width: 420px;
+  }
+
+  .riskr-hero__cta {
+    display: inline-block;
+    background: #fff;
+    color: #000;
+    font-family: var(--font-body--family);
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 2px;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+
+  .riskr-hero__cta:hover {
+    background: #e0e0e0;
+  }
+
+  @media screen and (max-width: 749px) {
+    .riskr-hero {
+      min-height: 70vh;
+      padding-bottom: 48px;
+    }
+
+    .riskr-hero__tagline {
+      max-width: 100%;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Riskr Hero",
+  "tag": "section",
+  "class": "riskr-hero-section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Riskr Hero"
+    }
+  ]
+}
+{% endschema %}
