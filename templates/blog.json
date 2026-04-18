@@ -8,6 +8,10 @@
  * ------------------------------------------------------------
  */{
   "sections": {
+    "riskr_blog_header": {
+      "type": "riskr-blog-header",
+      "settings": {}
+    },
     "main": {
       "type": "main-blog",
       "blocks": {
@@ -15,7 +19,7 @@
           "type": "text",
           "name": "Title",
           "settings": {
-            "text": "<h1>{{ closest.blog.title }}</h1>",
+            "text": "",
             "width": "fit-content",
             "max_width": "narrow",
             "alignment": "left",
@@ -110,6 +114,7 @@
     }
   },
   "order": [
+    "riskr_blog_header",
     "main"
   ]
 }

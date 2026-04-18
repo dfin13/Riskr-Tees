@@ -1,0 +1,71 @@
+<div class="riskr-blog-header">
+  <div class="riskr-blog-header__inner page-width">
+    <p class="riskr-blog-header__eyebrow">Thought Leadership</p>
+    <h1 class="riskr-blog-header__headline">
+      Insights from the frontier<br>of corporate apparel.
+    </h1>
+    <p class="riskr-blog-header__subhead">
+      Analysis, perspective, and unsolicited opinions from the Riskr Inc. Strategy &amp; Narrative Engineering team.
+    </p>
+  </div>
+</div>
+
+<style>
+  .riskr-blog-header {
+    background: #fff;
+    border-bottom: 1px solid #e8e8e8;
+  }
+
+  .riskr-blog-header__inner {
+    padding-block: 100px 72px;
+  }
+
+  .riskr-blog-header__eyebrow {
+    font-family: var(--font-body--family);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.38);
+    margin: 0 0 28px;
+  }
+
+  .riskr-blog-header__headline {
+    font-family: var(--font-heading--family);
+    font-size: clamp(32px, 5.5vw, 72px);
+    font-weight: 700;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    color: #000;
+    margin: 0 0 24px;
+  }
+
+  .riskr-blog-header__subhead {
+    font-family: var(--font-body--family);
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: rgba(0, 0, 0, 0.52);
+    max-width: 480px;
+    margin: 0;
+  }
+
+  @media screen and (max-width: 749px) {
+    .riskr-blog-header__inner {
+      padding-block: 72px 56px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Riskr Blog Header",
+  "tag": "section",
+  "class": "riskr-blog-header-section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Riskr Blog Header"
+    }
+  ]
+}
+{% endschema %}

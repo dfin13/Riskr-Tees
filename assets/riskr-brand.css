@@ -220,3 +220,58 @@ select {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ── Blog / article styling ───────────────────────────────────── */
+
+.main-blog-post__content,
+.article-template .rte {
+  font-family: var(--font-body--family);
+  font-size: 1rem;
+  line-height: 1.8;
+  color: rgba(0, 0, 0, 0.75);
+  max-width: 680px;
+}
+
+.main-blog-post__content h2,
+.main-blog-post__content h3 {
+  font-family: var(--font-heading--family);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: #000;
+  margin-block: 2em 0.5em;
+}
+
+.main-blog-post__content p {
+  margin-block: 0 1.4em;
+}
+
+.main-blog-post__content a {
+  color: #000;
+  text-underline-offset: 3px;
+}
+
+/* Blog card grid: editorial, no radius */
+.blog-post-card {
+  border-radius: 0 !important;
+}
+
+.blog-post-card__image {
+  border-radius: 0 !important;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+/* ── Password page: Riskr treatment ──────────────────────────── */
+
+.template-password {
+  background: #000;
+}
+
+.template-password h1 {
+  color: #fff;
+  letter-spacing: -0.03em;
+}
+
+.template-password p {
+  color: rgba(255, 255, 255, 0.55);
+}
