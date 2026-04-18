@@ -1,13 +1,7 @@
-{%- liquid
-  if section.settings.product != blank
-    assign fp = section.settings.product
-  else
-    assign fp = collections.all.products | first
-  endif
--%}
+{%- assign featured_products = collections.all.products -%}
+{%- assign total = featured_products.size -%}
 
-{% if fp %}
-<div class="riskr-featured">
+<riskr-featured class="riskr-featured">
 
   <div class="riskr-featured__rule"></div>
 
@@ -15,32 +9,78 @@
 
     <div class="riskr-featured__top">
       <span class="riskr-featured__eyebrow">{{ section.settings.eyebrow }}</span>
-      <span class="riskr-featured__counter">01 — 03</span>
+      <div class="riskr-featured__controls">
+        <button class="riskr-featured__btn riskr-featured__btn--prev" aria-label="Previous product">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M9 2L4 7L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <span class="riskr-featured__counter">
+          <span class="riskr-featured__counter-now">01</span>
+          <span class="riskr-featured__counter-sep">&nbsp;—&nbsp;</span>
+          <span class="riskr-featured__counter-end">{% if total < 10 %}0{{ total }}{% else %}{{ total }}{% endif %}</span>
+        </span>
+        <button class="riskr-featured__btn riskr-featured__btn--next" aria-label="Next product">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M5 2L10 7L5 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
     </div>
 
-    <a href="{{ fp.url }}" class="riskr-featured__name-link" aria-hidden="true" tabindex="-1">
-      <h2 class="riskr-featured__name">{{ fp.title }}</h2>
-    </a>
+    <div class="riskr-featured__progress">
+      <div class="riskr-featured__progress-bar"></div>
+    </div>
 
-    <div class="riskr-featured__bottom">
-      <div class="riskr-featured__details">
-        <span class="riskr-featured__price">{{ fp.price_min | money_without_trailing_zeros }}</span>
-        <span class="riskr-featured__spec">{{ section.settings.detail }}</span>
-      </div>
-      <a href="{{ fp.url }}" class="riskr-featured__cta" aria-label="Shop {{ fp.title }}">
-        Shop Now <span class="riskr-featured__arrow" aria-hidden="true">&rarr;</span>
-      </a>
+    <div class="riskr-featured__slides">
+      {%- for product in featured_products -%}
+        <div class="riskr-featured__slide{% if forloop.first %} is-active{% endif %}"
+             data-index="{{ forloop.index0 }}">
+
+          <a href="{{ product.url }}"
+             class="riskr-featured__name-link"
+             aria-hidden="true"
+             tabindex="-1">
+            <h2 class="riskr-featured__name">{{ product.title }}</h2>
+          </a>
+
+          <div class="riskr-featured__bottom">
+            <div class="riskr-featured__details">
+              <span class="riskr-featured__price">{{ product.price_min | money_without_trailing_zeros }}</span>
+              <span class="riskr-featured__spec">{{ section.settings.detail }}</span>
+            </div>
+            <a href="{{ product.url }}"
+               class="riskr-featured__cta"
+               aria-label="Shop {{ product.title }}">
+              Shop Now <span class="riskr-featured__arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+
+        </div>
+      {%- endfor -%}
+    </div>
+
+    <div class="riskr-featured__dots" role="tablist" aria-label="Product navigation">
+      {%- for product in featured_products -%}
+        <button
+          class="riskr-featured__dot{% if forloop.first %} is-active{% endif %}"
+          role="tab"
+          aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+          aria-label="{{ product.title }}"
+          data-index="{{ forloop.index0 }}">
+        </button>
+      {%- endfor -%}
     </div>
 
   </div>
 
   <div class="riskr-featured__rule"></div>
 
-</div>
-{% endif %}
+</riskr-featured>
 
 <style>
   .riskr-featured {
+    display: block;
     background: #000;
   }
 
@@ -55,15 +95,16 @@
     flex-direction: column;
   }
 
+  /* ── Top row ─────────────────────────────────────────── */
+
   .riskr-featured__top {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 
-  .riskr-featured__eyebrow,
-  .riskr-featured__counter {
+  .riskr-featured__eyebrow {
     font-family: var(--font-body--family);
     font-size: 0.6875rem;
     font-weight: 500;
@@ -71,6 +112,82 @@
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.28);
   }
+
+  .riskr-featured__controls {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .riskr-featured__counter {
+    font-family: var(--font-body--family);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    color: rgba(255, 255, 255, 0.28);
+    display: flex;
+    align-items: center;
+  }
+
+  .riskr-featured__counter-now {
+    display: inline-block;
+    min-width: 16px;
+    transition: opacity 0.18s ease;
+  }
+
+  .riskr-featured__btn {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    padding: 8px 2px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.15s ease;
+  }
+
+  .riskr-featured__btn:hover {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  /* ── Progress bar ─────────────────────────────────────── */
+
+  .riskr-featured__progress {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.05);
+    margin-bottom: 44px;
+    overflow: hidden;
+  }
+
+  .riskr-featured__progress-bar {
+    height: 100%;
+    width: 0%;
+    background: rgba(255, 255, 255, 0.32);
+  }
+
+  /* ── Slides ───────────────────────────────────────────── */
+
+  .riskr-featured__slides {
+    display: grid;
+  }
+
+  .riskr-featured__slide {
+    grid-row: 1;
+    grid-column: 1;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .riskr-featured__slide.is-active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  /* ── Product name ─────────────────────────────────────── */
 
   .riskr-featured__name-link {
     display: block;
@@ -92,6 +209,8 @@
   .riskr-featured__name-link:hover .riskr-featured__name {
     color: rgba(255, 255, 255, 0.68);
   }
+
+  /* ── Bottom row ───────────────────────────────────────── */
 
   .riskr-featured__bottom {
     display: flex;
@@ -152,6 +271,33 @@
     transform: translateX(4px);
   }
 
+  /* ── Dots ─────────────────────────────────────────────── */
+
+  .riskr-featured__dots {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 32px;
+  }
+
+  .riskr-featured__dot {
+    height: 1px;
+    width: 20px;
+    border: none;
+    padding: 9px 0;
+    background-color: rgba(255, 255, 255, 0.18);
+    background-clip: content-box;
+    cursor: pointer;
+    transition: background-color 0.25s ease, width 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .riskr-featured__dot.is-active {
+    background-color: rgba(255, 255, 255, 0.75);
+    width: 36px;
+  }
+
+  /* ── Mobile ───────────────────────────────────────────── */
+
   @media screen and (max-width: 749px) {
     .riskr-featured__inner {
       padding-block: 40px 44px;
@@ -174,17 +320,140 @@
   }
 </style>
 
+{% javascript %}
+  class RiskrFeatured extends HTMLElement {
+    connectedCallback() {
+      this.slides  = [...this.querySelectorAll('.riskr-featured__slide')];
+      this.dots    = [...this.querySelectorAll('.riskr-featured__dot')];
+      this.counter = this.querySelector('.riskr-featured__counter-now');
+      this.bar     = this.querySelector('.riskr-featured__progress-bar');
+      this.idx     = 0;
+      this.busy    = false;
+      this.timer   = null;
+      this.reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      this.querySelector('.riskr-featured__btn--prev')
+        ?.addEventListener('click', () => this.shift(-1));
+      this.querySelector('.riskr-featured__btn--next')
+        ?.addEventListener('click', () => this.shift(1));
+
+      this.dots.forEach((d, i) => d.addEventListener('click', () => this.go(i)));
+
+      this.addEventListener('mouseenter', () => this.pause());
+      this.addEventListener('mouseleave', () => this.play());
+
+      let tx = 0;
+      this.addEventListener('touchstart', e => { tx = e.changedTouches[0].clientX; }, { passive: true });
+      this.addEventListener('touchend', e => {
+        const dx = e.changedTouches[0].clientX - tx;
+        if (Math.abs(dx) > 44) this.shift(dx < 0 ? 1 : -1);
+      });
+
+      if (this.slides.length > 1) this.play();
+    }
+
+    play() {
+      this.stop();
+      if (this.bar && !this.reduced) {
+        this.bar.style.transition = 'none';
+        this.bar.style.width = '0%';
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+          this.bar.style.transition = 'width 5s linear';
+          this.bar.style.width = '100%';
+        }));
+      }
+      this.timer = setTimeout(() => this.shift(1), 5000);
+    }
+
+    stop() {
+      clearTimeout(this.timer);
+      if (this.bar) {
+        this.bar.style.transition = 'none';
+        this.bar.style.width = '0%';
+      }
+    }
+
+    pause() { this.stop(); }
+
+    shift(dir) {
+      this.go((this.idx + dir + this.slides.length) % this.slides.length);
+    }
+
+    go(next) {
+      if (this.busy || next === this.idx) return;
+      this.busy = true;
+      this.stop();
+
+      const prev    = this.idx;
+      const dir     = next > prev ? 1 : -1;
+      const dur     = this.reduced ? 0 : 500;
+      const easeIn  = 'cubic-bezier(0.4, 0, 1, 1)';
+      const easeOut = 'cubic-bezier(0.16, 1, 0.3, 1)';
+      const outEl   = this.slides[prev];
+      const inEl    = this.slides[next];
+
+      if (!this.reduced) {
+        outEl.style.transition = `opacity ${dur * 0.75}ms ${easeIn}, transform ${dur * 0.75}ms ${easeIn}, filter ${dur * 0.75}ms ${easeIn}`;
+        outEl.style.opacity    = '0';
+        outEl.style.transform  = `translateY(${dir * -22}px)`;
+        outEl.style.filter     = 'blur(5px)';
+        outEl.style.pointerEvents = 'none';
+
+        inEl.style.transition  = 'none';
+        inEl.style.opacity     = '0';
+        inEl.style.transform   = `translateY(${dir * 22}px)`;
+        inEl.style.filter      = 'blur(5px)';
+        inEl.style.visibility  = 'visible';
+
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+          inEl.style.transition  = `opacity ${dur}ms ${easeOut}, transform ${dur}ms ${easeOut}, filter ${dur}ms ${easeOut}`;
+          inEl.style.opacity     = '1';
+          inEl.style.transform   = 'translateY(0)';
+          inEl.style.filter      = 'blur(0px)';
+          inEl.style.pointerEvents = 'auto';
+        }));
+      }
+
+      if (this.counter) {
+        if (!this.reduced) {
+          this.counter.style.opacity = '0';
+          setTimeout(() => {
+            this.counter.textContent = String(next + 1).padStart(2, '0');
+            this.counter.style.opacity = '1';
+          }, 160);
+        } else {
+          this.counter.textContent = String(next + 1).padStart(2, '0');
+        }
+      }
+
+      this.dots[prev]?.classList.remove('is-active');
+      this.dots[prev]?.setAttribute('aria-selected', 'false');
+      this.dots[next]?.classList.add('is-active');
+      this.dots[next]?.setAttribute('aria-selected', 'true');
+
+      setTimeout(() => {
+        outEl.classList.remove('is-active');
+        outEl.removeAttribute('style');
+        inEl.classList.add('is-active');
+        inEl.removeAttribute('style');
+        this.idx  = next;
+        this.busy = false;
+        this.play();
+      }, dur + 80);
+    }
+  }
+
+  if (!customElements.get('riskr-featured')) {
+    customElements.define('riskr-featured', RiskrFeatured);
+  }
+{% endjavascript %}
+
 {% schema %}
 {
   "name": "Riskr Featured",
   "tag": "section",
   "class": "riskr-featured-section",
   "settings": [
-    {
-      "type": "product",
-      "id": "product",
-      "label": "Featured product"
-    },
     {
       "type": "text",
       "id": "eyebrow",
