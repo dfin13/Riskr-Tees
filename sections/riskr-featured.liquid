@@ -1,0 +1,207 @@
+{%- liquid
+  if section.settings.product != blank
+    assign fp = section.settings.product
+  else
+    assign fp = collections.all.products | first
+  endif
+-%}
+
+{% if fp %}
+<div class="riskr-featured">
+
+  <div class="riskr-featured__rule"></div>
+
+  <div class="riskr-featured__inner page-width">
+
+    <div class="riskr-featured__top">
+      <span class="riskr-featured__eyebrow">{{ section.settings.eyebrow }}</span>
+      <span class="riskr-featured__counter">01 — 02</span>
+    </div>
+
+    <a href="{{ fp.url }}" class="riskr-featured__name-link">
+      <h2 class="riskr-featured__name">{{ fp.title }}</h2>
+    </a>
+
+    <div class="riskr-featured__bottom">
+      <div class="riskr-featured__details">
+        <span class="riskr-featured__price">{{ fp.price_min | money_without_trailing_zeros }}</span>
+        <span class="riskr-featured__spec">{{ section.settings.detail }}</span>
+      </div>
+      <a href="{{ fp.url }}" class="riskr-featured__cta">
+        Shop Now <span class="riskr-featured__arrow">&rarr;</span>
+      </a>
+    </div>
+
+  </div>
+
+  <div class="riskr-featured__rule"></div>
+
+</div>
+{% endif %}
+
+<style>
+  .riskr-featured {
+    background: #000;
+  }
+
+  .riskr-featured__rule {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.07);
+  }
+
+  .riskr-featured__inner {
+    padding-block: 52px 60px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .riskr-featured__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .riskr-featured__eyebrow,
+  .riskr-featured__counter {
+    font-family: var(--font-body--family);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.28);
+  }
+
+  .riskr-featured__name-link {
+    display: block;
+    text-decoration: none;
+  }
+
+  .riskr-featured__name {
+    font-family: var(--font-heading--family);
+    font-size: clamp(52px, 10vw, 140px);
+    font-weight: 700;
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    color: #fff;
+    margin: 0 0 44px;
+    text-transform: uppercase;
+    transition: color 0.15s ease;
+  }
+
+  .riskr-featured__name-link:hover .riskr-featured__name {
+    color: rgba(255, 255, 255, 0.68);
+  }
+
+  .riskr-featured__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    padding-top: 28px;
+  }
+
+  .riskr-featured__details {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .riskr-featured__price {
+    font-family: var(--font-body--family);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #fff;
+    letter-spacing: -0.01em;
+  }
+
+  .riskr-featured__spec {
+    font-family: var(--font-body--family);
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.32);
+    letter-spacing: 0.03em;
+  }
+
+  .riskr-featured__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-body--family);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    padding: 12px 22px;
+    transition: background 0.15s ease, border-color 0.15s ease;
+  }
+
+  .riskr-featured__cta:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.55);
+  }
+
+  .riskr-featured__arrow {
+    display: inline-block;
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .riskr-featured__cta:hover .riskr-featured__arrow {
+    transform: translateX(4px);
+  }
+
+  @media screen and (max-width: 749px) {
+    .riskr-featured__inner {
+      padding-block: 40px 44px;
+    }
+
+    .riskr-featured__name {
+      margin-bottom: 32px;
+    }
+
+    .riskr-featured__bottom {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 24px;
+    }
+
+    .riskr-featured__cta {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Riskr Featured",
+  "tag": "section",
+  "class": "riskr-featured-section",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Featured product"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow label",
+      "default": "The Collection"
+    },
+    {
+      "type": "text",
+      "id": "detail",
+      "label": "Product detail line",
+      "default": "Black · White · 100% Ring-Spun Cotton"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Riskr Featured"
+    }
+  ]
+}
+{% endschema %}

@@ -152,6 +152,14 @@
     letter-spacing: 0.02em;
   }
 
+  @media (prefers-reduced-motion: no-preference) {
+    .riskr-testimonials__card:nth-child(2).riskr-reveal { transition-delay: 0.07s; }
+    .riskr-testimonials__card:nth-child(3).riskr-reveal { transition-delay: 0.14s; }
+    .riskr-testimonials__card:nth-child(4).riskr-reveal { transition-delay: 0.07s; }
+    .riskr-testimonials__card:nth-child(5).riskr-reveal { transition-delay: 0.14s; }
+    .riskr-testimonials__card:nth-child(6).riskr-reveal { transition-delay: 0.21s; }
+  }
+
   @media screen and (max-width: 989px) {
     .riskr-testimonials__header {
       grid-template-columns: 1fr;

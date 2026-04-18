@@ -54,7 +54,7 @@
               "type": "_product-list-text",
               "name": "t:names.collection_title",
               "settings": {
-                "text": "<h3>The Collection</h3>",
+                "text": "<h2>The Collection</h2>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -118,7 +118,7 @@
               "type": "_product-card-gallery",
               "name": "t:names.product_card_media",
               "settings": {
-                "image_ratio": "adapt",
+                "image_ratio": "square",
                 "border": "none",
                 "border_width": 1,
                 "border_opacity": 100,
@@ -226,12 +226,21 @@
       "type": "riskr-testimonials",
       "name": "Riskr Testimonials",
       "settings": {}
+    },
+    "riskr_featured_main": {
+      "type": "riskr-featured",
+      "name": "Riskr Featured",
+      "settings": {
+        "eyebrow": "The Collection",
+        "detail": "Black · White · 100% Ring-Spun Cotton"
+      }
     }
   },
   "order": [
     "riskr_hero_main",
     "riskr_ticker_main",
     "product_list_fa6P9H",
+    "riskr_featured_main",
     "riskr_mission_main",
     "riskr_why_main",
     "riskr_testimonials_main"

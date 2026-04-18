@@ -98,6 +98,16 @@
     margin: 0;
   }
 
+  @media (prefers-reduced-motion: no-preference) {
+    .riskr-why__item:nth-child(2).riskr-reveal {
+      transition-delay: 0.12s;
+    }
+
+    .riskr-why__item:nth-child(3).riskr-reveal {
+      transition-delay: 0.24s;
+    }
+  }
+
   @media screen and (max-width: 749px) {
     .riskr-why {
       padding-block: 72px;
